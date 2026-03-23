@@ -54,7 +54,6 @@ export function BrunchPage() {
   const accentSecondary = b?.colors.secondary || '#dbb977';
   const accentHover = b?.colors.accent || '#dbb977';
   const accentLight = b ? `${b.colors.primary}1a` : 'rgba(210,168,85,0.1)';
-  const accentBorder = b ? `${b.colors.primary}4d` : 'rgba(210,168,85,0.3)';
   const sectionBorderColor = b ? `${b.colors.primary}15` : undefined;
 
   // Gradientes
