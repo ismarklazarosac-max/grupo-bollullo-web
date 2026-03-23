@@ -58,7 +58,7 @@ export function News() {
 
         {/* News Grid */}
         {newsConfig.articles.length > 0 && (
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {newsConfig.articles.map((item, index) => (
               <article
                 key={item.id}
@@ -134,11 +134,11 @@ export function News() {
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {newsConfig.testimonials.map((t, index) => (
                 <div
                   key={t.name}
-                  className="scale-in p-8 bg-white/5 rounded-lg border border-white/10 relative"
+                  className="scale-in p-6 sm:p-8 bg-white/5 rounded-lg border border-white/10 relative"
                   style={{ transitionDelay: `${0.1 + index * 0.1}s` }}
                 >
                   <Quote className="w-8 h-8 text-gold-500/30 absolute top-6 right-6" />
@@ -182,7 +182,7 @@ export function News() {
 
                 {/* Timeline Highlights */}
                 {newsConfig.storyTimeline.length > 0 && (
-                  <div className="mt-8 grid grid-cols-3 gap-4">
+                  <div className="mt-8 grid grid-cols-3 gap-3 sm:gap-4">
                     {newsConfig.storyTimeline.map((item, index) => (
                       <div key={index} className="text-center p-4 bg-white/5 rounded-lg border border-white/10">
                         <div className="font-serif text-2xl text-gold-500 mb-1">{item.value}</div>
@@ -225,7 +225,7 @@ export function News() {
                 )}
 
                 {/* Decorative Frame */}
-                <div className="absolute -top-4 -right-4 w-full h-full border border-gold-500/20 rounded-lg -z-10" />
+                <div className="absolute -top-4 -right-4 w-full h-full border border-gold-500/20 rounded-lg -z-10 hidden md:block" />
               </div>
             </div>
           </div>

@@ -66,7 +66,7 @@ export function CartaPage() {
   return (
     <main className="pt-20" style={{ backgroundColor: pageBg }}>
       {/* Hero */}
-      <section className="relative h-[50vh] min-h-[400px]">
+      <section className="relative h-[50vh] min-h-[380px]">
         <div className="absolute inset-0">
           <img
             src={carta.heroImage || local?.heroImage || '/images/hero-banner.webp'}
@@ -80,20 +80,20 @@ export function CartaPage() {
         </div>
 
         <div className="relative h-full container-custom flex flex-col justify-end pb-12">
-          <nav className="absolute top-8 left-1/2 -translate-x-1/2">
-            <ol className="flex items-center gap-2 text-sm text-white/60">
+          <nav className="absolute top-4 sm:top-8 left-1/2 -translate-x-1/2">
+            <ol className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-white/60">
               <li><Link to="/" className="hover:text-gold-400 transition-colors">Inicio</Link></li>
-              <li><ChevronRight className="w-4 h-4" /></li>
+              <li><ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" /></li>
               <li><span style={{ color: accent }}>Carta {carta.localName}</span></li>
             </ol>
           </nav>
 
           <div className="animate-fade-up text-center">
             {b && (
-              <img src={b.logo} alt={b.name} className="h-16 md:h-24 w-auto mx-auto mb-5 drop-shadow-lg" />
+              <img src={b.logo} alt={b.name} className="h-14 sm:h-16 md:h-24 w-auto mx-auto mb-4 sm:mb-5 drop-shadow-lg" />
             )}
-            <span className="font-script text-2xl mb-2 block" style={{ color: accent }}>Nuestra Carta</span>
-            <h1 className="font-serif text-5xl md:text-6xl text-white mb-4">{carta.localName}</h1>
+            <span className="font-script text-xl sm:text-2xl mb-2 block" style={{ color: accent }}>Nuestra Carta</span>
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-4">{carta.localName}</h1>
             <p className="text-white/70 text-lg max-w-2xl mx-auto">
               Descubre nuestra selección de platos preparados con ingredientes frescos y de proximidad
             </p>

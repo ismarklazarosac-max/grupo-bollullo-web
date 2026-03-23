@@ -75,10 +75,11 @@ export function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled || !isHomePage
-          ? 'bg-wine-800/95 backdrop-blur-md py-3'
+        isScrolled || !isHomePage || isMobileMenuOpen
+          ? 'py-3'
           : 'bg-transparent py-5'
       }`}
+      style={isScrolled || !isHomePage || isMobileMenuOpen ? { backgroundColor: 'rgba(14,14,14,0.97)', backdropFilter: 'blur(12px)' } : undefined}
       role="navigation"
       aria-label="Main navigation"
     >
@@ -188,7 +189,7 @@ export function Navigation() {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden p-2 text-white"
+          className="lg:hidden relative z-50 p-2 text-white"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isMobileMenuOpen}
@@ -203,15 +204,16 @@ export function Navigation() {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden fixed inset-0 top-[72px] bg-wine-900/98 backdrop-blur-lg transition-all duration-500 ${
+        className={`lg:hidden fixed inset-0 top-0 z-40 transition-all duration-500 ${
           isMobileMenuOpen
             ? 'opacity-100 visible'
             : 'opacity-0 invisible pointer-events-none'
         }`}
         role="menu"
         aria-hidden={!isMobileMenuOpen}
+        style={{ backgroundColor: '#0a0a0a' }}
       >
-        <div className="container-custom py-8 flex flex-col gap-2">
+        <div className="container-custom pt-24 pb-8 flex flex-col gap-1 h-full overflow-y-auto">
           {navLinks.map((link, index) => {
             const IconComponent = iconMap[link.icon];
             const hasDropdown = !!link.dropdown;
@@ -226,7 +228,7 @@ export function Navigation() {
                   <div>
                     <button
                       onClick={() => setActiveDropdown(activeDropdown === link.name ? null : link.name)}
-                      className="flex items-center justify-between w-full py-4 text-lg text-white border-b border-white/10"
+                      className="flex items-center justify-between w-full py-4 text-base font-medium text-white/90 border-b border-white/[0.06]"
                       aria-expanded={activeDropdown === link.name}
                       role="menuitem"
                     >
@@ -234,7 +236,7 @@ export function Navigation() {
                         {IconComponent && <IconComponent className="w-5 h-5 text-gold-500" />}
                         {link.name}
                       </span>
-                      <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${
+                      <ChevronDown className={`w-4 h-4 text-white/40 transition-transform duration-300 ${
                         activeDropdown === link.name ? 'rotate-180' : ''
                       }`} aria-hidden="true" />
                     </button>
@@ -248,7 +250,7 @@ export function Navigation() {
                         <Link
                           key={item.name}
                           to={item.href}
-                          className="block w-full text-left pl-12 py-3 text-white/70 hover:text-gold-400"
+                          className="block w-full text-left pl-12 py-3 text-sm text-white/60 hover:text-gold-400 transition-colors"
                           role="menuitem"
                           onClick={() => {
                             setIsMobileMenuOpen(false);
@@ -263,7 +265,7 @@ export function Navigation() {
                 ) : link.href.startsWith('/') ? (
                   <Link
                     to={link.href}
-                    className="flex items-center gap-3 w-full py-4 text-lg text-white border-b border-white/10 hover:text-gold-400 transition-colors"
+                    className="flex items-center gap-3 w-full py-4 text-base font-medium text-white/90 border-b border-white/[0.06] hover:text-gold-400 transition-colors"
                     role="menuitem"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -273,7 +275,7 @@ export function Navigation() {
                 ) : (
                   <button
                     onClick={() => handleNavClick(link.href, false)}
-                    className="flex items-center gap-3 w-full py-4 text-lg text-white border-b border-white/10 hover:text-gold-400 transition-colors"
+                    className="flex items-center gap-3 w-full py-4 text-base font-medium text-white/90 border-b border-white/[0.06] hover:text-gold-400 transition-colors"
                     role="menuitem"
                   >
                     {IconComponent && <IconComponent className="w-5 h-5 text-gold-500" />}
@@ -287,7 +289,7 @@ export function Navigation() {
           {navigationConfig.ctaButtonText && (
             <Link
               to="/#contact"
-              className="btn-primary rounded mt-6 text-center"
+              className="btn-primary rounded mt-8 text-center text-base"
               role="menuitem"
               onClick={(e) => {
                 if (isHomePage) {
@@ -300,6 +302,11 @@ export function Navigation() {
               {navigationConfig.ctaButtonText}
             </Link>
           )}
+
+          {/* Mobile menu footer */}
+          <div className="mt-auto pt-8 border-t border-white/[0.06]">
+            <p className="text-white/30 text-xs text-center tracking-wider uppercase">Grupo Bollullo &middot; Restauración</p>
+          </div>
         </div>
       </div>
     </nav>

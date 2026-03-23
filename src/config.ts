@@ -93,7 +93,7 @@ export const navigationConfig: NavigationConfig = {
       icon: "Newspaper",
     },
   ],
-  ctaButtonText: "Reservar",
+  ctaButtonText: "Reservar Mesa",
 };
 
 // -----------------------------------------------------------------------------
@@ -123,6 +123,7 @@ export interface HeroStat {
 export interface HeroConfig {
   scriptText: string;
   mainTitle: string;
+  subtitle: string;
   ctaButtonText: string;
   ctaTarget: string;
   stats: HeroStat[];
@@ -131,14 +132,15 @@ export interface HeroConfig {
 }
 
 export const heroConfig: HeroConfig = {
-  scriptText: "Experiencia Gastronómica Canaria",
-  mainTitle: "Sabores del Atlántico\nen Tenerife",
-  ctaButtonText: "Descubre Nuestros Locales",
-  ctaTarget: "#locales",
+  scriptText: "Grupo Bollullo",
+  mainTitle: "Gastronomía Canaria\nen Tres Escenarios Únicos",
+  subtitle: "Tres restaurantes con alma propia en Tenerife. Cocina de raíz, producto local y los mejores rincones de la isla para vivirla a tu manera.",
+  ctaButtonText: "Reservar Mesa",
+  ctaTarget: "#contact",
   stats: [
     { value: 3, suffix: "", label: "Restaurantes" },
-    { value: 15, suffix: "+", label: "Años de Experiencia" },
-    { value: 50, suffix: "K+", label: "Clientes Satisfechos" },
+    { value: 15, suffix: "+", label: "Años" },
+    { value: 50, suffix: "K+", label: "Clientes" },
   ],
   decorativeText: "GASTRONOMÍA CANARIA",
   backgroundImage: "/images/hero-banner.webp",
@@ -186,7 +188,7 @@ export interface WineShowcaseConfig {
 export const wineShowcaseConfig: WineShowcaseConfig = {
   scriptText: "Nuestra Propuesta",
   subtitle: "EXPERIENCIAS CULINARIAS",
-  mainTitle: "Sabores que Cuentan Historias",
+  mainTitle: "Tres Cocinas, Una Filosofía",
   wines: [
     {
       id: "tradicion",
@@ -283,32 +285,32 @@ export interface WineryCarouselConfig {
 export const wineryCarouselConfig: WineryCarouselConfig = {
   scriptText: "Nuestros Espacios",
   subtitle: "TRES LOCALES ÚNICOS",
-  mainTitle: "Descubre Cada Rincón",
+  mainTitle: "Cada Local, Una Historia",
   locationTag: "Tenerife, Islas Canarias",
   slides: [
     {
       image: "/images/locales/mirador/hero.webp",
       title: "Mirador",
       subtitle: "San Pedro",
-      area: "Vistas",
-      unit: "Panorámicas",
-      description: "Ubicado en Los Realejos, ofrece vistas espectaculares al valle de La Orotava y al océano Atlántico. Un espacio donde la naturaleza y la gastronomía se fusionan.",
+      area: "Valle",
+      unit: "de La Orotava",
+      description: "Encaramado sobre los acantilados de Los Realejos, donde el horizonte se abre al Atlántico. Cocina canaria de altura, terraza con vistas panorámicas y atardeceres que no se olvidan.",
     },
     {
       image: "/images/locales/oasis/hero.webp",
       title: "Bollullo",
       subtitle: "Oasis",
-      area: "Ambiente",
-      unit: "Sofisticado",
-      description: "En el corazón de Candelaria, un oasis de elegancia y sabor. Diseño contemporáneo que rinde homenaje a la tradición canaria.",
+      area: "Paseo",
+      unit: "Marítimo",
+      description: "En el corazón de Candelaria, junto a la Basílica y el mar. Brunch los fines de semana, arroces de los que se habla y una terraza donde la brisa del Atlántico marca el ritmo.",
     },
     {
       image: "/images/locales/chiringuito/hero.webp",
       title: "Bollullo",
       subtitle: "Chiringuito",
       area: "Playa",
-      unit: "Paradisíaca",
-      description: "En La Orotava, a orillas del Atlántico. El lugar perfecto para disfrutar del sol, el mar y la mejor cocina de playa de Tenerife.",
+      unit: "de Bollullo",
+      description: "Al final de un camino entre plataneras, donde la costa norte muestra su cara más salvaje. Arena volcánica, cócteles, pescado fresco y la sensación de que el verano no tiene fin.",
     },
   ],
 };
@@ -362,7 +364,7 @@ export const museumConfig: MuseumConfig = {
   scriptText: "Nuestra Historia",
   subtitle: "RAÍCES CANARIAS",
   mainTitle: "Pasión por la Gastronomía",
-  introText: "En el corazón del Atlántico, sobre la vibrante isla de Tenerife, se alza el Grupo Bollullo como un referente de la gastronomía canaria. Un lugar donde la tradición se encuentra con la modernidad.",
+  introText: "Lo que empezó como un sueño familiar se ha convertido en tres espacios gastronómicos de referencia en Tenerife. Cada local nace del mismo compromiso: cocina canaria honesta, producto de la isla y experiencias que invitan a volver.",
   timeline: [
     { year: "2010", event: "Apertura del primer restaurante" },
     { year: "2015", event: "Expansión con Bollullo Oasis" },
@@ -406,7 +408,7 @@ export const museumConfig: MuseumConfig = {
   ],
   openingHours: "Consultar horarios por local",
   openingHoursLabel: "Horarios",
-  ctaButtonText: "Conoce Nuestra Historia",
+  ctaButtonText: "Reservar Mesa",
   yearBadge: "2010",
   yearBadgeLabel: "Fundado",
   quote: {
@@ -471,56 +473,56 @@ export interface NewsConfig {
 
 export const newsConfig: NewsConfig = {
   scriptText: "Experiencias",
-  subtitle: "DESCUBRE MÁS",
-  mainTitle: "Momentos Especiales",
-  viewAllText: "Ver Todo",
-  readMoreText: "Leer Más",
+  subtitle: "MÁS ALLÁ DE LA CARTA",
+  mainTitle: "Momentos que se Recuerdan",
+  viewAllText: "",
+  readMoreText: "Descubrir",
   articles: [
     {
       id: 1,
       image: "/images/brunch/mirador/hero.webp",
-      title: "Brunch Dominical",
-      excerpt: "Disfruta de nuestro exclusivo brunch los fines de semana con vistas panorámicas.",
-      date: "Todos los domingos",
-      category: "Experiencia",
+      title: "Brunch con Vistas",
+      excerpt: "Cada fin de semana, nuestro brunch se sirve con panorámicas al valle de La Orotava. Dulce, salado y un horizonte que no cabe en Instagram.",
+      date: "Fines de semana",
+      category: "Brunch",
     },
     {
       id: 2,
       image: "/images/eventos.webp",
-      title: "Eventos Privados",
-      excerpt: "Celebra tus momentos especiales en nuestros espacios únicos con catering personalizado.",
+      title: "Tu Evento, Nuestro Escenario",
+      excerpt: "Bodas frente al mar, cenas de empresa con atardecer o cumpleaños bajo las estrellas. Tres locales, infinitas posibilidades.",
       date: "Bajo reserva",
-      category: "Celebraciones",
+      category: "Eventos",
     },
     {
       id: 3,
       image: "/images/coctel.webp",
-      title: "Cócteles de Autor",
-      excerpt: "Descubre nuestra carta de cócteles inspirados en los sabores de Canarias.",
+      title: "Coctelería de Raíz Canaria",
+      excerpt: "Ron miel, frutas tropicales, hierbas de la isla. Nuestros cócteles cuentan la historia de Tenerife en cada sorbo.",
       date: "Todos los días",
-      category: "Bebidas",
+      category: "Cócteles",
     },
   ],
   testimonialsScriptText: "Opiniones",
-  testimonialsSubtitle: "LO QUE DICEN NUESTROS CLIENTES",
+  testimonialsSubtitle: "QUIENES NOS VISITAN, REPITEN",
   testimonialsMainTitle: "Experiencias Reales",
   testimonials: [
     {
       name: "María García",
       role: "Madrid",
-      text: "Una experiencia gastronómica inolvidable. Las vistas desde el Mirador son espectaculares y la comida excepcional.",
+      text: "Reservamos el Mirador por las vistas, pero volvimos por la cocina. El cherne a la plancha es de los mejores pescados que he probado nunca.",
       rating: 5,
     },
     {
       name: "Carlos Rodríguez",
       role: "Tenerife",
-      text: "El mejor lugar para disfrutar de la cocina canaria auténtica. El servicio es impecable y el ambiente único.",
+      text: "Somos de la isla y Bollullo Oasis se ha convertido en nuestro sitio. Los arroces, el brunch del domingo... No falla.",
       rating: 5,
     },
     {
       name: "Ana Martínez",
       role: "Barcelona",
-      text: "Descubrimos el Chiringuito y nos encantó. Playa, buena comida y el mejor ambiente de Tenerife.",
+      text: "El Chiringuito es otra cosa. Comer con los pies casi en la arena, un mojito en la mano y el mejor pulpo de la costa norte.",
       rating: 5,
     },
   ],
@@ -528,8 +530,8 @@ export const newsConfig: NewsConfig = {
   storySubtitle: "COMPROMISO CON LA CALIDAD",
   storyTitle: "De la Tierra a la Mesa",
   storyParagraphs: [
-    "En Grupo Bollullo creemos en el poder de los ingredientes locales. Trabajamos directamente con productores de Tenerife para llevar a tu mesa lo mejor de nuestra tierra.",
-    "Cada plato cuenta una historia de dedicación, pasión y respeto por la tradición culinaria canaria. Nuestros chefs combinan técnicas ancestrales con innovación creativa.",
+    "En Grupo Bollullo trabajamos directamente con productores locales de Tenerife. Cada ingrediente tiene nombre y origen: pescado de lonja, verduras de las medianías, quesos artesanos de la isla.",
+    "Nuestros chefs respetan la tradición culinaria canaria y la llevan un paso más allá. Sin fuegos artificiales, sin modas pasajeras. Solo producto bien tratado y platos con los que siempre quieres repetir.",
   ],
   storyTimeline: [
     { value: "3", label: "Restaurantes" },
@@ -587,9 +589,9 @@ export interface ContactFormConfig {
 
 export const contactFormConfig: ContactFormConfig = {
   scriptText: "Contacto",
-  subtitle: "ESTAMOS AQUÍ PARA TI",
-  mainTitle: "Haz tu Reserva",
-  introText: "Reserva tu mesa o consulta cualquier duda. Nuestro equipo estará encantado de atenderte.",
+  subtitle: "RESERVAS Y CONSULTAS",
+  mainTitle: "Reserva tu Experiencia",
+  introText: "Elige local, fecha y número de comensales. Nuestro equipo te confirma la disponibilidad en menos de 24 horas.",
   contactInfoTitle: "Información de Contacto",
   contactInfo: [
     {
@@ -685,7 +687,7 @@ export interface FooterConfig {
 export const footerConfig: FooterConfig = {
   brandName: "Grupo Bollullo",
   tagline: "Restauración",
-  description: "Experiencia gastronómica canaria en tres ubicaciones únicas de Tenerife. Tradición, calidad y pasión en cada plato.",
+  description: "Tres restaurantes con personalidad propia en los rincones más especiales de Tenerife. Cocina canaria, producto local y experiencias que se recuerdan.",
   socialLinks: [
     { icon: "Instagram", label: "Instagram", href: "https://instagram.com/grupobollullo" },
     { icon: "Facebook", label: "Facebook", href: "https://facebook.com/grupobollullo" },
@@ -719,7 +721,7 @@ export const footerConfig: FooterConfig = {
   newsletterSuccessText: "¡Gracias por suscribirte!",
   newsletterErrorText: "Ha ocurrido un error. Inténtalo de nuevo.",
   newsletterEndpoint: "https://formspree.io/f/YOUR_FORM_ID",
-  copyrightText: "© 2024 Grupo Bollullo. Todos los derechos reservados.",
+  copyrightText: "Grupo Bollullo. Todos los derechos reservados.",
   legalLinks: ["Aviso Legal", "Privacidad", "Cookies"],
   icpText: "",
   backToTopText: "Volver arriba",

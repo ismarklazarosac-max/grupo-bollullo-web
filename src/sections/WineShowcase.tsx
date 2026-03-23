@@ -65,12 +65,12 @@ export function WineShowcase() {
         </div>
 
         {/* Wine Tabs */}
-        <div className="fade-up flex justify-center gap-2 mb-16" style={{ transitionDelay: '0.1s' }}>
+        <div className="fade-up flex flex-wrap justify-center gap-2 mb-12 md:mb-16" style={{ transitionDelay: '0.1s' }}>
           {wines.map((w, i) => (
             <button
               key={w.id}
               onClick={() => setActiveWine(i)}
-              className={`px-6 py-3 rounded-sm text-sm transition-all duration-300 ${
+              className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-sm text-sm transition-all duration-300 ${
                 i === activeWine
                   ? 'bg-gold-500 text-white'
                   : 'bg-white/5 text-white/70 hover:bg-white/10 border border-white/10'
@@ -82,18 +82,13 @@ export function WineShowcase() {
         </div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
-          {/* Left: Wine Info */}
+        <div className="grid lg:grid-cols-5 gap-10 lg:gap-12 items-center">
+          {/* Left: Info */}
           <div className="slide-in-left lg:col-span-2 order-2 lg:order-1">
-            {/* Year + Name */}
-            <div className="mb-8">
-              <div className="flex items-baseline gap-4 mb-3">
-                <span className="font-serif text-6xl lg:text-7xl text-gold-500/30 leading-none">{wine.year}</span>
-                <div>
-                  <h2 className="font-serif text-h3 text-white leading-tight">{wine.name}</h2>
-                  <span className="font-script text-xl text-gold-400">{wine.subtitle}</span>
-                </div>
-              </div>
+            {/* Name */}
+            <div className="mb-6">
+              <h2 className="font-serif text-h3 text-white leading-tight">{wine.name}</h2>
+              <span className="font-script text-xl text-gold-400">{wine.subtitle}</span>
               <div className="w-16 h-px bg-gold-500 mt-4" />
             </div>
 
@@ -101,23 +96,24 @@ export function WineShowcase() {
             <p className="text-white/85 leading-relaxed mb-4">{wine.description}</p>
             <p className="text-white/65 leading-relaxed text-sm mb-8">{wine.tastingNotes}</p>
 
-            {/* Tasting Notes */}
-            <div className="flex gap-6 mb-8">
-              <div>
-                <div className="font-serif text-2xl text-gold-500">{wine.alcohol}</div>
-                <div className="text-[11px] text-white/50 uppercase tracking-wider mt-1">ABV</div>
+            {/* Details - only show non-empty values */}
+            {(wine.temperature || wine.aging) && (
+              <div className="flex flex-wrap gap-6 mb-8">
+                {wine.temperature && (
+                  <div>
+                    <div className="font-serif text-lg text-gold-500">{wine.temperature}</div>
+                    <div className="text-[11px] text-white/50 uppercase tracking-wider mt-1">Servicio</div>
+                  </div>
+                )}
+                {wine.temperature && wine.aging && <div className="w-px bg-white/10" />}
+                {wine.aging && (
+                  <div>
+                    <div className="font-serif text-lg text-gold-500">{wine.aging}</div>
+                    <div className="text-[11px] text-white/50 uppercase tracking-wider mt-1">Origen</div>
+                  </div>
+                )}
               </div>
-              <div className="w-px bg-white/10" />
-              <div>
-                <div className="font-serif text-2xl text-gold-500">{wine.temperature}</div>
-                <div className="text-[11px] text-white/50 uppercase tracking-wider mt-1">Temp</div>
-              </div>
-              <div className="w-px bg-white/10" />
-              <div>
-                <div className="font-serif text-2xl text-gold-500">{wine.aging}</div>
-                <div className="text-[11px] text-white/50 uppercase tracking-wider mt-1">Aging</div>
-              </div>
-            </div>
+            )}
 
             {/* CTA */}
             <button
@@ -126,45 +122,44 @@ export function WineShowcase() {
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
               }}
               className="btn-primary rounded-sm flex items-center gap-2 group"
-              aria-label={wineShowcaseConfig.mainTitle}
             >
-              {wineShowcaseConfig.mainTitle}
+              Reservar Mesa
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
           </div>
 
-          {/* Center: Wine Bottle */}
+          {/* Center: Dish Image */}
           <div className="lg:col-span-1 order-1 lg:order-2 flex justify-center">
-            <div className="relative" style={{ width: '220px', height: '520px' }}>
+            <div className="relative w-full max-w-[280px] aspect-[3/4]">
               {/* Glow */}
-              <div className={`absolute inset-0 flex items-center justify-center pointer-events-none`}>
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className={`w-48 h-48 ${wine.glowColor} rounded-full blur-3xl transition-colors duration-700`} />
               </div>
 
-              {/* Bottles */}
+              {/* Images */}
               {wines.map((w, i) => (
                 <img
                   key={w.id}
                   src={w.image}
-                  alt={`${w.name} - ${w.subtitle} ${w.year}`}
+                  alt={`${w.name} - ${w.subtitle}`}
                   loading={i === 0 ? undefined : 'lazy'}
                   style={w.filter ? { filter: w.filter } : undefined}
-                  className={`absolute inset-0 w-full h-full object-contain z-10 drop-shadow-2xl transition-all duration-700 ${
+                  className={`absolute inset-0 w-full h-full object-cover rounded-lg z-10 drop-shadow-2xl transition-all duration-700 ${
                     i === activeWine
                       ? 'opacity-100 scale-100 translate-y-0'
                       : i < activeWine
-                        ? 'opacity-0 scale-90 -translate-y-6 pointer-events-none'
-                        : 'opacity-0 scale-90 translate-y-6 pointer-events-none'
+                        ? 'opacity-0 scale-95 -translate-y-4 pointer-events-none'
+                        : 'opacity-0 scale-95 translate-y-4 pointer-events-none'
                   }`}
                 />
               ))}
 
               {/* Switcher Arrows */}
-              <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-4 z-20">
+              <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-4 z-20">
                 <button
                   onClick={prevWine}
                   className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-gold-500 hover:border-gold-500 transition-all duration-300"
-                  aria-label="Previous wine"
+                  aria-label="Anterior"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
@@ -174,7 +169,7 @@ export function WineShowcase() {
                 <button
                   onClick={nextWine}
                   className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-gold-500 hover:border-gold-500 transition-all duration-300"
-                  aria-label="Next wine"
+                  aria-label="Siguiente"
                 >
                   <ChevronRight className="w-4 h-4" />
                 </button>

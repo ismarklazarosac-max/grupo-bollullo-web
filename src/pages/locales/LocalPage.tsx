@@ -61,7 +61,7 @@ export function LocalPage() {
   return (
     <main className="pt-20" style={{ backgroundColor: pageBg }}>
       {/* Hero Section */}
-      <section className="relative h-[70vh] min-h-[500px]">
+      <section className="relative h-[60vh] sm:h-[70vh] min-h-[420px]">
         <div className="absolute inset-0">
           <img
             src={local.heroImage}
@@ -75,8 +75,8 @@ export function LocalPage() {
         </div>
 
         <div className="relative h-full container-custom flex flex-col justify-end pb-16">
-          <nav className="absolute top-8 left-1/2 -translate-x-1/2">
-            <ol className="flex items-center gap-2 text-sm text-white/60">
+          <nav className="absolute top-4 sm:top-8 left-1/2 -translate-x-1/2">
+            <ol className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-white/60">
               <li>
                 <Link to="/" className="hover:text-gold-400 transition-colors">
                   Inicio
@@ -111,7 +111,7 @@ export function LocalPage() {
             >
               Grupo Bollullo
             </span>
-            <h1 className="font-serif text-5xl md:text-7xl text-white mb-4">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl text-white mb-4">
               {local.name}{' '}
               <span
                 className={!b ? 'text-gold-400' : ''}
@@ -230,7 +230,7 @@ export function LocalPage() {
                   Nuestra historia
                 </span>
                 {local.storyHeadline && (
-                  <h2 className="font-serif text-4xl md:text-[3.5rem] text-white leading-[1.1] mb-8">
+                  <h2 className="font-serif text-3xl sm:text-4xl md:text-[3.5rem] text-white leading-[1.1] mb-6 sm:mb-8">
                     {local.storyHeadline}{' '}
                     {local.storyHeadlineAccent && (
                       <>

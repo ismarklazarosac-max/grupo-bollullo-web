@@ -44,7 +44,7 @@ export function Museum() {
       <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-gold-500/5 to-transparent" />
 
       <div className="container-custom relative">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20">
           {/* Left Content */}
           <div>
             {/* Section Header */}
@@ -116,12 +116,12 @@ export function Museum() {
                   {/* Horizontal line */}
                   <div className="absolute top-3 left-0 right-0 h-px bg-gold-500/30" />
                   {/* Timeline points */}
-                  <div className="flex justify-between overflow-x-auto gap-2">
+                  <div className="flex justify-between gap-2 overflow-x-auto pb-2 -mx-1 px-1 scrollbar-hide">
                     {museumConfig.timeline.map((event) => (
-                      <div key={event.year} className="relative flex flex-col items-center flex-shrink-0 min-w-[70px]">
+                      <div key={event.year} className="relative flex flex-col items-center flex-shrink-0 min-w-[65px]">
                         <div className="w-2.5 h-2.5 rounded-full bg-[#141414] border-2 border-gold-500 z-10" />
                         <span className="font-serif text-sm text-gold-500 mt-2">{event.year}</span>
-                        <span className="text-[11px] text-white/60 mt-0.5 text-center whitespace-nowrap">{event.event}</span>
+                        <span className="text-[10px] sm:text-[11px] text-white/60 mt-0.5 text-center leading-tight">{event.event}</span>
                       </div>
                     ))}
                   </div>

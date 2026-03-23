@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Wine, MapPin, Phone, Mail, Instagram, Facebook, Twitter, Youtube, ArrowUp, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { footerConfig } from '../config';
 
 // Icon lookup map for dynamic icon resolution from config strings
@@ -101,12 +102,21 @@ export function Footer() {
               <ul className="space-y-3">
                 {group.links.map((link) => (
                   <li key={link.name}>
-                    <button
-                      onClick={() => scrollToSection(link.href)}
-                      className="text-white/70 text-sm hover:text-gold-400 transition-colors"
-                    >
-                      {link.name}
-                    </button>
+                    {link.href.startsWith('/') ? (
+                      <Link
+                        to={link.href}
+                        className="text-white/70 text-sm hover:text-gold-400 transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={() => scrollToSection(link.href)}
+                        className="text-white/70 text-sm hover:text-gold-400 transition-colors"
+                      >
+                        {link.name}
+                      </button>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -117,7 +127,7 @@ export function Footer() {
           <div>
             {footerConfig.contactItems.length > 0 && (
               <>
-                <h3 className="font-serif text-lg text-white mb-5">{footerConfig.linkGroups.length > 0 ? footerConfig.linkGroups[footerConfig.linkGroups.length - 1]?.title : ''}</h3>
+                <h3 className="font-serif text-lg text-white mb-5">Contacto</h3>
                 <ul className="space-y-4">
                   {footerConfig.contactItems.map((item, index) => {
                     const IconComponent = iconMap[item.icon];

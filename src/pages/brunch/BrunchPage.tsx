@@ -75,7 +75,7 @@ export function BrunchPage() {
 
   return (
     <main className="pt-20" style={{ backgroundColor: pageBg }}>
-      <section className="relative h-[60vh] min-h-[450px]">
+      <section className="relative h-[55vh] sm:h-[60vh] min-h-[400px]">
         <div className="absolute inset-0">
           <img
             src={brunch.image}
@@ -89,10 +89,10 @@ export function BrunchPage() {
         </div>
 
         <div className="relative h-full container-custom flex flex-col justify-end pb-12">
-          <nav className="absolute top-8 left-1/2 -translate-x-1/2">
-            <ol className="flex items-center gap-2 text-sm text-white/60">
+          <nav className="absolute top-4 sm:top-8 left-1/2 -translate-x-1/2">
+            <ol className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-white/60">
               <li><Link to="/" className="hover:text-gold-400 transition-colors">Inicio</Link></li>
-              <li><ChevronRight className="w-4 h-4" /></li>
+              <li><ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" /></li>
               <li><span style={{ color: accent }}>Brunch {brunch.localName}</span></li>
             </ol>
           </nav>

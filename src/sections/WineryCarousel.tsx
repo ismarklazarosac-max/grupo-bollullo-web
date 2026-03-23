@@ -144,7 +144,7 @@ export function WineryCarousel() {
             </div>
 
             {/* Content Side */}
-            <div className="lg:bg-white/5 lg:border-y lg:border-r lg:border-white/10 lg:rounded-r-lg p-8 lg:p-12 flex flex-col justify-center relative overflow-hidden">
+            <div className="lg:bg-white/5 lg:border-y lg:border-r lg:border-white/10 lg:rounded-r-lg p-6 sm:p-8 lg:p-12 flex flex-col justify-center relative overflow-hidden">
               {slides.map((slide, index) => (
                 <div
                   key={index}
@@ -173,10 +173,10 @@ export function WineryCarousel() {
 
                   {/* Area Stats */}
                   <div className="flex items-baseline gap-2 mb-6">
-                    <span className="font-serif text-5xl lg:text-6xl text-gold-500">
+                    <span className="font-serif text-3xl sm:text-4xl lg:text-5xl text-gold-500">
                       {slide.area}
                     </span>
-                    <span className="text-white/70 text-lg">{slide.unit}</span>
+                    <span className="text-white/70 text-base sm:text-lg">{slide.unit}</span>
                   </div>
 
                   {/* Description */}

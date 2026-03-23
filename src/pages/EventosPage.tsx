@@ -36,7 +36,7 @@ export function EventosPage() {
       {/* ================================================================= */}
       {/* Hero                                                              */}
       {/* ================================================================= */}
-      <section className="relative h-[70vh] min-h-[500px]">
+      <section className="relative h-[60vh] sm:h-[70vh] min-h-[420px]">
         <div className="absolute inset-0">
           <img
             src={eventosConfig.heroImage}
@@ -52,10 +52,10 @@ export function EventosPage() {
         </div>
 
         <div className="relative h-full container-custom flex flex-col justify-end pb-16">
-          <nav className="absolute top-8 left-1/2 -translate-x-1/2">
-            <ol className="flex items-center gap-2 text-sm text-white/60">
+          <nav className="absolute top-4 sm:top-8 left-1/2 -translate-x-1/2">
+            <ol className="flex items-center gap-2 text-xs sm:text-sm text-white/60">
               <li><Link to="/" className="hover:text-gold-400 transition-colors">Inicio</Link></li>
-              <li><ChevronRight className="w-4 h-4" /></li>
+              <li><ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" /></li>
               <li className="text-gold-400">Eventos</li>
             </ol>
           </nav>
@@ -66,7 +66,7 @@ export function EventosPage() {
               <Sparkles className="w-8 h-8" style={{ color: grupo.accent }} />
             </div>
             <span className="font-script text-gold-400 text-2xl mb-2 block">Celebraciones</span>
-            <h1 className="font-serif text-5xl md:text-7xl text-white mb-6">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl text-white mb-4 sm:mb-6">
               {eventosConfig.title}
             </h1>
             <p className="text-white/70 text-lg max-w-3xl mx-auto">
@@ -100,7 +100,7 @@ export function EventosPage() {
             <h2 className="font-serif text-4xl text-white">Tipos de eventos</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {eventosConfig.eventos.map((evento, index) => (
               <div
                 key={index}
@@ -251,7 +251,7 @@ export function EventosPage() {
             <h2 className="font-serif text-4xl text-white">Elige tu ubicación</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {locationCards.map((loc) => {
               const lb = getBranding(loc.brandId);
               const locAccent = lb?.colors.primary || grupo.accent;

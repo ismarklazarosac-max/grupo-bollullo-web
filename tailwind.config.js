@@ -78,12 +78,12 @@ module.exports = {
         script: ['Qwitcher Grypen', 'cursive'],
       },
       fontSize: {
-        'display': ['5.5rem', { lineHeight: '1.1' }],
-        'h1': ['4.5rem', { lineHeight: '1.15' }],
-        'h2': ['3.6rem', { lineHeight: '1.2' }],
-        'h3': ['2.5rem', { lineHeight: '1.25' }],
-        'h4': ['2rem', { lineHeight: '1.3' }],
-        'h5': ['1.5rem', { lineHeight: '1.4' }],
+        'display': ['clamp(2.75rem, 5vw + 1rem, 5.5rem)', { lineHeight: '1.1' }],
+        'h1': ['clamp(2.25rem, 4vw + 1rem, 4.5rem)', { lineHeight: '1.15' }],
+        'h2': ['clamp(1.875rem, 3vw + 0.75rem, 3.6rem)', { lineHeight: '1.2' }],
+        'h3': ['clamp(1.625rem, 2vw + 0.75rem, 2.5rem)', { lineHeight: '1.25' }],
+        'h4': ['clamp(1.375rem, 1.5vw + 0.5rem, 2rem)', { lineHeight: '1.3' }],
+        'h5': ['clamp(1.25rem, 1vw + 0.5rem, 1.5rem)', { lineHeight: '1.4' }],
         'h6': ['1.25rem', { lineHeight: '1.5' }],
       },
       borderRadius: {
