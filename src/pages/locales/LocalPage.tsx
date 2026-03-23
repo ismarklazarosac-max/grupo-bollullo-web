@@ -136,83 +136,6 @@ export function LocalPage() {
         </div>
       </section>
 
-      {/* Info Cards */}
-      <section
-        className="py-16 bg-[#0e0e0e]"
-        style={{
-          backgroundColor: sectionBg,
-          borderTop: sectionBorderColor ? `1px solid ${sectionBorderColor}` : undefined,
-        }}
-      >
-        <div className="container-custom">
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Address */}
-            <div
-              className="rounded-lg p-6 border border-white/5 transition-colors"
-              style={{ backgroundColor: cardBg }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = accentBorder || 'rgba(210,168,85,0.3)'; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.05)'; }}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: accentLight || 'rgba(210,168,85,0.1)' }}
-                >
-                  <MapPin className="w-6 h-6" style={{ color: accent || '#d2a855' }} />
-                </div>
-                <h3 className="font-serif text-xl text-white">Dirección</h3>
-              </div>
-              <p className="text-white/70">{local.address}</p>
-            </div>
-
-            {/* Phone */}
-            <div
-              className="rounded-lg p-6 border border-white/5 transition-colors"
-              style={{ backgroundColor: cardBg }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = accentBorder || 'rgba(210,168,85,0.3)'; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.05)'; }}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: accentLight || 'rgba(210,168,85,0.1)' }}
-                >
-                  <Phone className="w-6 h-6" style={{ color: accent || '#d2a855' }} />
-                </div>
-                <h3 className="font-serif text-xl text-white">Reservas</h3>
-              </div>
-              <a
-                href={`tel:${local.phone}`}
-                className="text-white/70 transition-colors"
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = accentHover || '#dbb977'; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = ''; }}
-              >
-                {local.phone}
-              </a>
-            </div>
-
-            {/* Schedule */}
-            <div
-              className="rounded-lg p-6 border border-white/5 transition-colors"
-              style={{ backgroundColor: cardBg }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = accentBorder || 'rgba(210,168,85,0.3)'; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.05)'; }}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: accentLight || 'rgba(210,168,85,0.1)' }}
-                >
-                  <Clock className="w-6 h-6" style={{ color: accent || '#d2a855' }} />
-                </div>
-                <h3 className="font-serif text-xl text-white">Horario</h3>
-              </div>
-              <p className="text-white/70">{local.schedule}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ═══ EDITORIAL STORYTELLING ═══ */}
       {local.story && local.story.length >= 3 && (
         <>
@@ -708,6 +631,87 @@ export function LocalPage() {
                 Más información <ChevronRight className="w-4 h-4" />
               </span>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Info Cards — Dirección, Reservas, Horario */}
+      <section
+        className="py-16"
+        style={{
+          backgroundColor: sectionBg,
+          borderTop: sectionBorderColor ? `1px solid ${sectionBorderColor}` : undefined,
+        }}
+      >
+        <div className="container-custom">
+          <div className="text-center mb-10">
+            <span
+              className={`font-script text-xl mb-2 block ${!b ? 'text-gold-400' : ''}`}
+              style={accent ? { color: accent } : undefined}
+            >
+              Información práctica
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl text-white">Encuéntranos</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div
+              className="rounded-lg p-6 border border-white/5 transition-colors"
+              style={{ backgroundColor: cardBg }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = accentBorder || 'rgba(210,168,85,0.3)'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.05)'; }}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: accentLight || 'rgba(210,168,85,0.1)' }}
+                >
+                  <MapPin className="w-6 h-6" style={{ color: accent || '#d2a855' }} />
+                </div>
+                <h3 className="font-serif text-xl text-white">Dirección</h3>
+              </div>
+              <p className="text-white/70">{local.address}</p>
+            </div>
+            <div
+              className="rounded-lg p-6 border border-white/5 transition-colors"
+              style={{ backgroundColor: cardBg }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = accentBorder || 'rgba(210,168,85,0.3)'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.05)'; }}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: accentLight || 'rgba(210,168,85,0.1)' }}
+                >
+                  <Phone className="w-6 h-6" style={{ color: accent || '#d2a855' }} />
+                </div>
+                <h3 className="font-serif text-xl text-white">Reservas</h3>
+              </div>
+              <a
+                href={`tel:${local.phone}`}
+                className="text-white/70 transition-colors"
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = accentHover || '#dbb977'; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = ''; }}
+              >
+                {local.phone}
+              </a>
+            </div>
+            <div
+              className="rounded-lg p-6 border border-white/5 transition-colors"
+              style={{ backgroundColor: cardBg }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = accentBorder || 'rgba(210,168,85,0.3)'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.05)'; }}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: accentLight || 'rgba(210,168,85,0.1)' }}
+                >
+                  <Clock className="w-6 h-6" style={{ color: accent || '#d2a855' }} />
+                </div>
+                <h3 className="font-serif text-xl text-white">Horario</h3>
+              </div>
+              <p className="text-white/70">{local.schedule}</p>
+            </div>
           </div>
         </div>
       </section>
