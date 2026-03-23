@@ -1,0 +1,49 @@
+GUIA DE MARCA — BOLLULLO MIRADOR SAN PEDRO
+============================================
+
+NOMBRE
+  Bollullo Mirador San Pedro
+
+CONCEPTO
+  Restaurante-mirador premium con vistas panoramicas al mar.
+  Gastronomia de autor en un entorno elevado, elegante y exclusivo.
+
+ESTILO VISUAL
+  Sofisticado, calido y editorial.
+  Texturas marmol y piedra natural. Acabados dorados.
+  Estetica de lujo accesible con toques clasicos.
+
+COLORES PRINCIPALES
+  #83684D — Bronce oscuro (color principal del logo)
+  #CAB5B8 — Rosa empolvado
+  #ECE1D6 — Crema calido
+  #ECE1D6 — Marfil
+  #BC6E5B — Terracota suave
+  #B9A191 — Arena
+  #4C3A2A — Marron oscuro (textos, acentos)
+
+TIPOGRAFIA
+  Principal: Cormorant Garamond (serif, elegante)
+  Usar para titulos, nombre de marca y encabezados.
+  Cuerpo de texto: sans-serif neutra para contraste (Montserrat o similar).
+
+SENSACIONES QUE DEBE TRANSMITIR
+  - Exclusividad sin frialdad
+  - Calidez mediterranea
+  - Confianza y tradicion
+  - Experiencia gastronomica elevada
+  - Conexion con el paisaje y el entorno natural
+
+REFERENCIAS / INSPIRACION
+  Restaurantes con estrella en costa mediterranea.
+  Hoteles boutique con materiales naturales.
+  Editoriales de gastronomia y lifestyle premium.
+
+RECOMENDACIONES PARA LA WEB
+  - Fondos claros (crema/marfil) con tipografia bronce oscuro.
+  - Botones en tono bronce o terracota con hover dorado.
+  - Fotografias grandes, luminosas, con luz natural.
+  - Espaciado generoso, layout editorial.
+  - El logo debe aparecer siempre en version principal (bronce sobre claro)
+    o version invertida (claro sobre oscuro) segun fondo.
+  - Evitar colores frios o neon. Mantener siempre la paleta calida.

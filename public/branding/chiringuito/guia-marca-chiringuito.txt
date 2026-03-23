@@ -1,0 +1,51 @@
+GUIA DE MARCA — BOLLULLO CHIRINGUITO
+======================================
+
+NOMBRE
+  Bollullo Chiringuito
+
+CONCEPTO
+  Chiringuito de playa con personalidad.
+  Cocina marinera, cocteles y ambiente playero-premium.
+  El punto de encuentro junto al mar.
+
+ESTILO VISUAL
+  Vibrante, fresco y costero.
+  Elementos marinos (olas, conchas, gaviotas).
+  Gradientes de azul y toques verdes.
+
+COLORES PRINCIPALES
+  #4B8EED — Azul cielo (color principal)
+  #A9D7FF — Azul claro
+  #003670 — Azul marino profundo
+  #103670 — Azul oscuro (textos)
+  #1CB860 — Verde esmeralda (acento del isotipo)
+  #7B60CA — No aplica (verificar en brandboard)
+  #F2E6CA — Arena / beige calido
+
+TIPOGRAFIA
+  Titulos: Poppins (sans-serif, moderna y redonda)
+  Cuerpo: Montserrat (sans-serif, limpia)
+  El nombre "Bollullo" usa una tipografia script/caligrafic propia.
+
+SENSACIONES QUE DEBE TRANSMITIR
+  - Energia y alegria
+  - Brisa marina y sal
+  - Diversion sin perder calidad
+  - Frescura costera
+  - Ambiente informal pero cuidado
+
+REFERENCIAS / INSPIRACION
+  Chiringuitos premium de costa (Ibiza, Tarifa, Formentera).
+  Beach clubs con identidad visual fuerte.
+  Estetica de mar + gastronomia casual.
+
+RECOMENDACIONES PARA LA WEB
+  - Fondos con gradiente azul suave o blanco con acentos azules.
+  - Botones en azul cielo con hover en azul marino.
+  - El verde esmeralda como acento puntual (iconos, highlights).
+  - Fotografias de playa, mar, cocteles coloridos, mariscos.
+  - Tipografia Poppins para titulos, Montserrat para cuerpo.
+  - Puede ser mas dinamico y jugueton que Mirador u Oasis.
+  - El logo con olas y concha debe aparecer completo cuando el tamano lo permita.
+  - Sobre fondos oscuros usar version del logo en blanco/azul claro.
