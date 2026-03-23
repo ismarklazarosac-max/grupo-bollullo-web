@@ -28,6 +28,12 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setActiveDropdown(null);
+  }, [location.pathname]);
+
   // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -72,14 +78,20 @@ export function Navigation() {
 
   const navLinks = navigationConfig.navLinks;
 
+  const showNavBg = isScrolled || !isHomePage || isMobileMenuOpen;
+
   return (
+    <>
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled || !isHomePage || isMobileMenuOpen
-          ? 'py-3'
-          : 'bg-transparent py-5'
+        showNavBg ? 'py-3' : 'bg-transparent py-5'
       }`}
-      style={isScrolled || !isHomePage || isMobileMenuOpen ? { backgroundColor: 'rgba(14,14,14,0.97)', backdropFilter: 'blur(12px)' } : undefined}
+      style={showNavBg ? {
+        backgroundColor: 'rgba(14,14,14,0.97)',
+        // backdrop-filter omitted when menu is open to avoid creating
+        // a containing block that breaks the mobile menu's fixed positioning
+        ...(isMobileMenuOpen ? {} : { backdropFilter: 'blur(12px)' }),
+      } : undefined}
       role="navigation"
       aria-label="Main navigation"
     >
@@ -201,29 +213,29 @@ export function Navigation() {
           )}
         </button>
       </div>
+    </nav>
 
-      {/* Mobile Menu */}
-      <div
-        className={`lg:hidden fixed inset-0 top-0 z-40 transition-all duration-500 ${
-          isMobileMenuOpen
-            ? 'opacity-100 visible'
-            : 'opacity-0 invisible pointer-events-none'
-        }`}
-        role="menu"
-        aria-hidden={!isMobileMenuOpen}
-        style={{ backgroundColor: '#0a0a0a' }}
-      >
-        <div className="container-custom pt-24 pb-8 flex flex-col gap-1 h-full overflow-y-auto">
-          {navLinks.map((link, index) => {
-            const IconComponent = iconMap[link.icon];
-            const hasDropdown = !!link.dropdown;
-            
-            return (
-              <div
-                key={link.name}
-                className="animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
+    {/* Mobile Menu — rendered outside <nav> to avoid backdrop-filter
+        creating a containing block that breaks position:fixed */}
+    <div
+      className={`lg:hidden fixed inset-0 z-[45] transition-all duration-500 ${
+        isMobileMenuOpen
+          ? 'opacity-100 visible'
+          : 'opacity-0 invisible pointer-events-none'
+      }`}
+      role="menu"
+      aria-hidden={!isMobileMenuOpen}
+      style={{ backgroundColor: '#0a0a0a' }}
+    >
+      <div className="container-custom pt-24 pb-8 flex flex-col gap-1 h-full overflow-y-auto">
+        {navLinks.map((link) => {
+          const IconComponent = iconMap[link.icon];
+          const hasDropdown = !!link.dropdown;
+
+          return (
+            <div
+              key={link.name}
+            >
                 {hasDropdown ? (
                   <div>
                     <button
@@ -309,6 +321,6 @@ export function Navigation() {
           </div>
         </div>
       </div>
-    </nav>
+    </>
   );
 }
