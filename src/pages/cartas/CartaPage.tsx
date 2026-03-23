@@ -69,7 +69,7 @@ export function CartaPage() {
       <section className="relative h-[50vh] min-h-[400px]">
         <div className="absolute inset-0">
           <img
-            src={carta.heroImage || local?.heroImage || '/images/hero-banner.jpg'}
+            src={carta.heroImage || local?.heroImage || '/images/hero-banner.webp'}
             alt={carta.localName}
             className="w-full h-full object-cover"
           />
@@ -244,7 +244,7 @@ export function CartaPage() {
                     className="group relative overflow-hidden rounded-lg aspect-video"
                   >
                     <img
-                      src={otherLocal?.heroImage || '/images/hero-banner.jpg'}
+                      src={otherLocal?.heroImage || '/images/hero-banner.webp'}
                       alt={otherCarta.localName}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />

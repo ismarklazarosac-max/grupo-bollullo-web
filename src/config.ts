@@ -21,7 +21,7 @@ export const siteConfig: SiteConfig = {
   description: "Descubre la excelencia gastronómica canaria en Grupo Bollullo. Tres locales únicos: Mirador San Pedro, Bollullo Oasis y Bollullo Chiringuito. Experiencias culinarias inolvidables en Tenerife.",
   language: "es",
   keywords: "restaurantes Tenerife, gastronomía canaria, Grupo Bollullo, Mirador San Pedro, Bollullo Oasis, Bollullo Chiringuito, comida canaria, restaurantes Los Realejos, restaurantes Candelaria, restaurantes La Orotava",
-  ogImage: "/images/hero-banner.jpg",
+  ogImage: "/images/hero-banner.webp",
   canonical: "https://grupobollullo.es",
 };
 
@@ -141,7 +141,7 @@ export const heroConfig: HeroConfig = {
     { value: 50, suffix: "K+", label: "Clientes Satisfechos" },
   ],
   decorativeText: "GASTRONOMÍA CANARIA",
-  backgroundImage: "/images/hero-banner.jpg",
+  backgroundImage: "/images/hero-banner.webp",
 };
 
 // -----------------------------------------------------------------------------
@@ -193,7 +193,7 @@ export const wineShowcaseConfig: WineShowcaseConfig = {
       name: "Cocina",
       subtitle: "Tradicional Canaria",
       year: "",
-      image: "/images/plato-gourmet-1.jpg",
+      image: "/images/plato-gourmet-1.webp",
       filter: "",
       glowColor: "bg-amber-600/20",
       description: "Recetas auténticas transmitidas de generación en generación, elaboradas con ingredientes locales de primera calidad.",
@@ -207,7 +207,7 @@ export const wineShowcaseConfig: WineShowcaseConfig = {
       name: "Pescado",
       subtitle: "Fresco del Atlántico",
       year: "",
-      image: "/images/plato-gourmet-2.jpg",
+      image: "/images/plato-gourmet-2.webp",
       filter: "",
       glowColor: "bg-blue-500/20",
       description: "Pescado fresco traído diariamente de las costas de Tenerife, preparado con técnicas que respetan su sabor natural.",
@@ -221,7 +221,7 @@ export const wineShowcaseConfig: WineShowcaseConfig = {
       name: "Carnes",
       subtitle: "Selectas y Tiernas",
       year: "",
-      image: "/images/plato-gourmet-3.jpg",
+      image: "/images/plato-gourmet-3.webp",
       filter: "",
       glowColor: "bg-red-800/20",
       description: "Cortes premium de carne local y nacional, madurados y cocinados a la perfección.",
@@ -374,7 +374,7 @@ export const museumConfig: MuseumConfig = {
       id: "historia",
       name: "Historia",
       icon: "History",
-      image: "/images/museum-tab1.jpg",
+      image: "/images/museum-tab1.webp",
       content: {
         title: "Un Sueño Familiar",
         description: "Lo que comenzó como un pequeño restaurante familiar se ha convertido en un grupo de referencia gastronómica en Tenerife.",
@@ -385,7 +385,7 @@ export const museumConfig: MuseumConfig = {
       id: "cocina",
       name: "Cocina",
       icon: "BookOpen",
-      image: "/images/museum-tab2.jpg",
+      image: "/images/museum-tab2.webp",
       content: {
         title: "Tradición y Vanguardia",
         description: "Nuestra cocina respeta las recetas tradicionales canarias mientras incorpora técnicas modernas.",
@@ -396,7 +396,7 @@ export const museumConfig: MuseumConfig = {
       id: "reconocimientos",
       name: "Premios",
       icon: "Award",
-      image: "/images/museum-tab3.jpg",
+      image: "/images/museum-tab3.webp",
       content: {
         title: "Excelencia Reconocida",
         description: "Nuestro compromiso con la calidad nos ha valido reconocimientos en el ámbito gastronómico canario.",
@@ -415,7 +415,7 @@ export const museumConfig: MuseumConfig = {
     attribution: "Fundadores",
   },
   founderPhotoAlt: "Fundadores de Grupo Bollullo",
-  founderPhoto: "/images/museum-tab1.jpg",
+  founderPhoto: "/images/museum-tab1.webp",
 };
 
 // -----------------------------------------------------------------------------
@@ -486,7 +486,7 @@ export const newsConfig: NewsConfig = {
     },
     {
       id: 2,
-      image: "/images/eventos.jpg",
+      image: "/images/eventos.webp",
       title: "Eventos Privados",
       excerpt: "Celebra tus momentos especiales en nuestros espacios únicos con catering personalizado.",
       date: "Bajo reserva",
@@ -494,7 +494,7 @@ export const newsConfig: NewsConfig = {
     },
     {
       id: 3,
-      image: "/images/coctel.jpg",
+      image: "/images/coctel.webp",
       title: "Cócteles de Autor",
       excerpt: "Descubre nuestra carta de cócteles inspirados en los sabores de Canarias.",
       date: "Todos los días",
@@ -541,7 +541,7 @@ export const newsConfig: NewsConfig = {
     text: "La verdadera cocina canaria nace del respeto por nuestros productos y nuestra gente.",
     attribution: "Equipo Grupo Bollullo",
   },
-  storyImage: "/images/slider03.jpg",
+  storyImage: "/images/slider03.webp",
   storyImageCaption: "Interior de nuestro restaurante",
 };
 
@@ -785,7 +785,7 @@ export const localesConfig: LocalInfo[] = [
         label: "El Enclave",
         heading: "Donde el valle se abre al océano",
         text: "Encaramado sobre el valle de La Orotava, Mirador de San Pedro se asoma al Atlántico como un balcón entre cielo y mar. Cada mesa es primera fila: los acantilados, la costa norte, la luz que cambia el paisaje hora a hora. Llegar aquí ya cambia el ritmo del día.",
-        image: { src: "/images/mirador-san-pedro.jpg", alt: "Vistas panorámicas desde la terraza de Mirador de San Pedro al valle de La Orotava y el océano Atlántico" },
+        image: { src: "/images/mirador-san-pedro.webp", alt: "Vistas panorámicas desde la terraza de Mirador de San Pedro al valle de La Orotava y el océano Atlántico" },
       },
       {
         label: "La Cocina",
@@ -1754,7 +1754,7 @@ export interface EventoInfo {
 }
 
 export const eventosConfig = {
-  heroImage: "/images/eventos.jpg",
+  heroImage: "/images/eventos.webp",
   title: "Eventos y Celebraciones",
   subtitle: "Haz de tu Evento una Experiencia Inolvidable",
   description: "En Grupo Bollullo ponemos a tu disposición nuestros espacios únicos para celebrar momentos especiales. Desde reuniones íntimas hasta grandes celebraciones, nuestro equipo se encarga de cada detalle.",
@@ -1762,19 +1762,19 @@ export const eventosConfig = {
     {
       title: "Celebraciones Privadas",
       description: "Cumpleaños, aniversarios, reuniones familiares... Celebra tus momentos especiales en un entorno único.",
-      image: "/images/eventos.jpg",
+      image: "/images/eventos.webp",
       features: ["Menú personalizado", "Decoración incluida", "Servicio dedicado"],
     },
     {
       title: "Eventos Corporativos",
       description: "Reuniones de empresa, team building, cenas de Navidad. Ofrecemos soluciones a medida para tu empresa.",
-      image: "/images/slider03.jpg",
+      image: "/images/slider03.webp",
       features: ["Salón privado", "Proyector y pantalla", "Coffee break"],
     },
     {
       title: "Bodas y Banquetes",
       description: "El día más especial de tu vida merece un escenario extraordinario. Creamos experiencias inolvidables.",
-      image: "/images/hero-banner.jpg",
+      image: "/images/hero-banner.webp",
       features: ["Menú degustación", "Coordinación integral", "Espacios únicos"],
     },
   ] as EventoInfo[],
